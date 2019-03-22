@@ -45,6 +45,7 @@ end
 
 def shortened_tweet_truncator(tweet)
   if tweet.length > 140
-    tweet.delete_if[141...max] + "..."
+    tweet.delete_if do |char|
+      char[140...max] + "..."
 end
 end
